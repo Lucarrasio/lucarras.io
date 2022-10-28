@@ -1,0 +1,114 @@
+
+lllllllllllll         ll      ll             ll
+ll                   l  l       ll         ll
+ll                  ll  ll        ll      ll  
+ll                 ll    ll         ll  ll
+ll      llllll    llllllllll          ll                                 
+ll          ll   ll        ll         ll
+ll          ll  ll          ll        ll
+llllllllllllll ll            ll       ll
+
+ll       lllllllllll ll        ll llllllllll
+ll       ll       ll  ll      ll  ll
+ll       ll       ll   ll    ll   llllllllll
+ll       ll       ll    ll  ll    ll
+ll       ll       ll     l  l     ll
+llllllll lllllllllll      ll      llllllllll
+
+
+
+ 
+BBBBBBBBBB        RRRRRRRRRR       UU         UU        HH          HH
+BB       BB       RR       RR      UU         UU        HH          HH     
+BB        BB      RR        RR     UU         UU        HH          HH
+BB        BB      RR        RR     UU         UU        HH          HH
+BB       BB       RR       RR      UU         UU        HH          HH
+BBBBBBBBBB        RRRRRRRRRR       UU         UU        HHHHHHHHHHHHHH
+BB       BB       RR     RR        UU         UU        HH          HH
+BB        BB      RR      RR       UU         UU        HH          HH
+BB        BB      RR       RR      UU         UU        HH          HH
+BB       BB       RR        RR      UUU     UUU         HH          HH
+BBBBBBBBBB        RR         RR       UUUUUUU           HH          HH
+
+/-------------\
+| |-----------/ *shoots at text*
+| |_/ LOL we are pro coders, We codes images
+| |yes
+---
+
+exports.tank = {
+  Parent: [GenericTank],
+  Label: "Go poo yourself",
+  Body: [
+   HEATLH = base.HEALTH * 1.05
+   FOV = base.FOV * 0.85
+   DAMAGE = base.DAMAGE + 5
+  ],
+  GUNS: [
+   { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  14,     5,      1,      0,    -4.5,     0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.auto, g.gunner, g.twin, g.twin, g.power, g.halfreload]),
+                    TYPE: exports.bullet,
+                }, },
+  ]
+  
+
+
+
+
+
+
+}
+let infinity = 99999999999*999999999
+exports.AC_body = {
+  PARENT: [exports.genericTank],
+  LABEL: "Arena Closer",
+  BODY: {
+    DAMAGE: base.DAMAGE * infinity,
+    HEALTH: base.HEALTH * infinity,
+    SPEED: base.SPEED * 5,
+    FOV: base.FOV * 3,
+  }
+  COLOR: 3,
+  SHAPE: 0,
+};
+exports.Arena_Closer = {
+  PARENT: [exports.AC_body],
+  GUNS: [
+   { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  14,     5,      1,      0,    -4.5,     0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.op, 
+                    g.destroy, 
+                    g.morereload,
+                    g.halfrecoil,
+                    g.halfrecoil,
+                    g.op, 
+                    g.destroy, 
+                    g.morereload,
+                    g.halfrecoil,
+                    g.halfrecoil,
+                    g.op, 
+                    g.destroy, 
+                    g.morereload,
+                    g.halfrecoil,
+                    g.halfrecoil,
+                    g.op, 
+                    g.destroy, 
+                    g.morereload,
+                    g.halfrecoil,
+                    g.halfrecoil,
+                    g.op, 
+                    g.destroy, 
+                    g.morereload,
+                    g.halfrecoil,
+                    g.halfrecoil,
+                    g.morespeed,
+                    ]),
+                    TYPE: exports.bullet,
+                }, },
+  ]
+};
